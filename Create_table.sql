@@ -47,9 +47,10 @@ MaNV varchar(50),
 MaKH varchar(50),
 NgayBan date,
 DVT varchar(50),
-tonggia int,
+TongGia decimal(10,2),
 foreign key (MaNV) references nhanvien(MaNV),
 foreign key (MaKH) references khachhang(MaKH)
+-- , foreign key (MaHD) references thuoc_trong_hoa_don(MaHD)
 );
 
 create table if not exists thuoc_trong_hoa_don
@@ -79,12 +80,16 @@ MaNCC varchar(50),
 MaThuoc varchar(50),
 GiaNhap decimal(10, 2), -- 10 là chữ số có thể, 2 là chữ số sau hàng thập phan
 SoLuongThuocNhap int,
-foreign key (maNCC) references nhacungcap(maNCC)
+foreign key (MaNCC) references nhacungcap(MaNCC),
+foreign key (MaThuoc) references thuoc(MaThuoc),
+foreign key (MaNV) references nhanvien(MaNV)
 );
 
+drop schema report;
+create schema report;
+use report;
 
-
-drop table Hoadon;
+drop table hoadon;
 drop table khachhang;
 drop table nhanvien;
 drop table thuoc;
