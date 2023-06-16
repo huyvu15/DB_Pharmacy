@@ -3,79 +3,82 @@ use report;
 
 -- create table
 
-create table if not exists Nhanvien
+create table if not exists nhanvien
 (
-Manv varchar(50) primary key ,
-tennv varchar(50),
+MaNV varchar(50) primary key ,
+TenNV varchar(50),
 Gmail varchar(50),
-Sdt varchar(50),
-Gt varchar(50),
+SDT varchar(50),
+GT varchar(50),
 Luong varchar(50)
 );
 
-create table if not exists Khachhang
+create table if not exists khachhang
 (
-Makh varchar(50) primary key,
-tenkh varchar(50),
-Sdt varchar(50),
-Gt varchar(50)
+MaKH varchar(50) primary key,
+TenKH varchar(50),
+SDT varchar(50),
+GT varchar(50)
 );
 
-create table if not exists Danhmuc (
-  id_danh_muc varchar(50) primary key,
-  tendanhmuc varchar(50)
+create table if not exists danhmuc (
+  MaDanhMuc varchar(50) primary key,
+  TenDanhMuc text
 );
 
-create table if not exists Thuoc
+create table if not exists thuoc
 (
-Mathuoc varchar(50) primary key,
-tenthuoc varchar(50),
-id_danhmuc varchar(50),
-Dvt varchar(50),
-congdung varchar(50),
-soluongthuoccon int,
-gia int,
-ngaysx date,
-ngayhh date,
-foreign key (id_danhmuc) references Danhmuc(id_danh_muc)
+MaThuoc varchar(50) primary key,
+TenThuoc varchar(50),
+MaDanhMuc varchar(50),
+DVT varchar(50),
+CongDung varchar(50),
+SoLuongThuocCon int,
+GiaBan decimal(10,2),
+NgaySanXuat date,
+NgayHetHan date,
+foreign key (MaDanhMuc) references danhmuc(MaDanhMuc)
 );
 
-create table if not exists Hoadon
+create table if not exists hoadon
 (
-Mahoadon varchar(50) primary key,
-Manv varchar(50),
-Makh varchar(50),
-ngayban date,
-Dvt varchar(50),
-soluong int,
+MaHD varchar(50) primary key,
+MaNV varchar(50),
+MaKH varchar(50),
+NgayBan date,
+DVT varchar(50),
 tonggia int,
-foreign key (Manv) references Nhanvien(Manv),
-foreign key (Makh) references Khachhang(Makh)
+foreign key (MaNV) references nhanvien(MaNV),
+foreign key (MaKH) references khachhang(MaKH)
 );
 
-create table if not exists thuoc_co_trong_hoa_don
+create table if not exists thuoc_trong_hoa_don
 (
-Id int primary key,
-Mahoadon varchar(50),
-Mathuoc varchar(50),
-foreign key (Mahoadon) references Hoadon(Mahoadon),
-foreign key (Mathuoc) references Thuoc(Mathuoc)
+-- (MaHD, MaThuoc) primary key,
+MaHD varchar(50),
+MaThuoc varchar(50),
+SoLuongBan int,
+foreign key (MaHD) references hoadon(MaHD),
+foreign key (MaThuoc) references thuoc(MaThuoc)
 );
 
 create table if not exists nhacungcap
 (
-maNCC varchar(50) primary key,
-tenNCC varchar(50),
-diachi varchar(50),
-sdt varchar(50),
-gmail varchar(50)
+MaNCC varchar(50) primary key,
+TenNCC varchar(50),
+DiaChi varchar(50),
+SDT varchar(50),
+Gmail varchar(50)
 );
 
 create table if not exists Cungcap
 (
-manvql varchar(50),
-ngaycc date,
-maNCC varchar(50),
+MaNV varchar(50),
+NgayCungCap date,
+MaNCC varchar(50),
+MaThuoc varchar(50),
+GiaNhap decimal(10, 2), -- 10 là chữ số có thể, 2 là chữ số sau hàng thập phan
+SoLuongThuocNhap int,
 foreign key (maNCC) references nhacungcap(maNCC)
 );
 
