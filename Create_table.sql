@@ -28,15 +28,15 @@ create table if not exists danhmuc (
 
 create table if not exists thuoc
 (
-MaThuoc varchar(50) primary key,
-TenThuoc varchar(50),
-MaDanhMuc varchar(50),
-DVT varchar(50),
+MaThuoc varchar(50) primary key not null,
+TenThuoc varchar(50) not null,
+MaDanhMuc varchar(50) not null,
+DVT varchar(50) not null,
 CongDung varchar(50),
-SoLuongThuocCon int,
-GiaBan decimal(10,2),
-NgaySanXuat date,
-NgayHetHan date,
+SoLuongThuocCon int not null,
+GiaBan decimal(10,2) not null,
+NgaySanXuat date not null,
+NgayHetHan date not null,
 foreign key (MaDanhMuc) references danhmuc(MaDanhMuc)
 );
 
