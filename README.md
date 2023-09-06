@@ -1,4 +1,7 @@
 # DB_Pharmacy
+
+[Watch demo at here](https://www.youtube.com/watch?v=E2MmFeIvt7U)
+
 Qua khảo sát về tình hình hoạt động của các cửa hàng thuốc ở nhiều địa phương,
 chúng em nhận thấy một số hiệu thuốc có tiếng như Long Châu, Pharmarcity,
 Tâm Việt, siêu thị thuốc Việt,. . . Đây đều là những thương hiệu chăm sóc sức
@@ -22,4 +25,4 @@ cửa hàng nào cũng có thể áp dụng được. Từ đó, góp phần nà
 thuận lợi hơn trong việc quản lý tiệm thuốc đồng thời mang đến cho người dùng
 những trải nghiệm hài lòng nhất.
 
-# Xem báo cáo chi tiết tại [afb](https://github.com/huyvu15/DB_Pharmacy/blob/main/b%C3%A1o%20c%C3%A1o.pdf)
+# Xem báo cáo chi tiết tại [đây](https://github.com/huyvu15/DB_Pharmacy/blob/main/b%C3%A1o%20c%C3%A1o.pdf)
