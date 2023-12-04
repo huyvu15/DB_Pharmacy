@@ -3,7 +3,7 @@
 [Watch demo at here](https://www.youtube.com/watch?v=E2MmFeIvt7U)
 
 
-[description](https://phanmemquanlyphongkham.net/wp-content/uploads/2020/12/phan-mem-nha-thuoc-2.jpg)
+![description](https://phanmemquanlyphongkham.net/wp-content/uploads/2020/12/phan-mem-nha-thuoc-2.jpg)
 
 Qua khảo sát về tình hình hoạt động của các cửa hàng thuốc ở nhiều địa phương,
 chúng em nhận thấy một số hiệu thuốc có tiếng như Long Châu, Pharmarcity,
